@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu8rm6mlwdxn7"]
+
+[ext_resource type="Texture2D" uid="uid://f4io5xye5p1w" path="res://assets/art.png" id="1_8scug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wro8"]
+atlas = ExtResource("1_8scug")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heulo"]
+atlas = ExtResource("1_8scug")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ntpex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wro8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_heulo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TileCursor" type="Node2D"]
+z_index = -1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ntpex")
+autoplay = "default"
+frame_progress = 0.614359
