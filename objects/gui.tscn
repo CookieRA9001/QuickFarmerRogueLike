@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5cedd8ga1whi"]
+
+[ext_resource type="Script" path="res://scripts/gui.gd" id="1_egmt0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yk13h"]
+font_color = Color(1, 1, 1, 0.705882)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5uj4y"]
+font_size = 14
+font_color = Color(0.74978, 0.74978, 0.74978, 0.588235)
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_egmt0")
+
+[node name="SeedSelect" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -90.0
+offset_right = 307.0
+grow_vertical = 0
+
+[node name="SelectedTxt" type="Label" parent="SeedSelect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -53.0
+offset_right = 284.0
+offset_bottom = -30.0
+grow_vertical = 0
+text = "Selected: - [0]"
+label_settings = SubResource("LabelSettings_yk13h")
+
+[node name="NextUpTxt" type="Label" parent="SeedSelect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -74.0
+offset_right = 284.0
+offset_bottom = -51.0
+grow_vertical = 0
+text = "Scroll Up: - [0]"
+label_settings = SubResource("LabelSettings_5uj4y")
+
+[node name="NextDownTxt" type="Label" parent="SeedSelect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -29.0
+offset_right = 284.0
+offset_bottom = -6.0
+grow_vertical = 0
+text = "Scroll Down: - [0]"
+label_settings = SubResource("LabelSettings_5uj4y")

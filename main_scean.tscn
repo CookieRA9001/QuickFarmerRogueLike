@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpi3rtcsdx857"]
+[gd_scene load_steps=6 format=3 uid="uid://bpi3rtcsdx857"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ggep43creo" path="res://objects/player.tscn" id="2_08s6u"]
 [ext_resource type="Texture2D" uid="uid://f4io5xye5p1w" path="res://assets/art.png" id="2_78q86"]
+[ext_resource type="PackedScene" uid="uid://c5cedd8ga1whi" path="res://objects/gui.tscn" id="4_a1wa1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwhif"]
 texture = ExtResource("2_78q86")
@@ -13,8 +14,11 @@ sources/0 = SubResource("TileSetAtlasSource_dwhif")
 
 [node name="Node2D" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("4_a1wa1")]
+
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 tile_set = SubResource("TileSet_3tfnv")
 format = 2
 layer_0/z_index = -10
@@ -23,7 +27,6 @@ layer_0/tile_data = PackedInt32Array(-131082, 196608, 0, -131081, 131072, 0, -19
 [node name="Player" parent="." instance=ExtResource("2_08s6u")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-2, -2)
 zoom = Vector2(4, 4)
 limit_left = -1000
 limit_top = -1000

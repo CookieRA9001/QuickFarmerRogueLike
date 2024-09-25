@@ -25,10 +25,12 @@ var tileCurserRef:Node2D = null
 func _ready():
 	tileCurserRef = TILE_CURSOR.instantiate()
 	get_tree().get_root().add_child.call_deferred(tileCurserRef)
+	updateCurrentSeed()
 
 func updateCurrentSeed():
 	scroll_delay_timer.start()
 	currentSeedIndex = currentSeedIndex % seeds.size()
+	GM.player_seed_select_change.emit(self)
 
 func useSelectedSeed():
 	var seed = seeds[currentSeedIndex]
