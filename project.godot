@@ -84,6 +84,12 @@ select_down={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Objects"
+2d_physics/layer_2="Soil"
+2d_physics/layer_3="Plants"
+
 [physics]
 
 2d/default_gravity_vector=Vector2(0, 0)

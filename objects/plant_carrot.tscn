@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgf6cc3nsnbv1"]
+
+[ext_resource type="PackedScene" uid="uid://cyfh0hsbv1uie" path="res://objects/plant.tscn" id="1_cbuwr"]
+[ext_resource type="Texture2D" uid="uid://cltjvedxgegdl" path="res://assets/plant_carrot.png" id="2_wcyip"]
+
+[node name="Carrot" instance=ExtResource("1_cbuwr")]
+seed_tag = "carrot"
+seed_grown_texture = ExtResource("2_wcyip")

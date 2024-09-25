@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyfh0hsbv1uie"]
+
+[ext_resource type="Script" path="res://scripts/plant.gd" id="1_hs8nr"]
+[ext_resource type="Texture2D" uid="uid://bvatbc1svvrn7" path="res://assets/plant_spraut.png" id="2_nyfpe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyhil"]
+size = Vector2(10, 10)
+
+[node name="Plant" type="Node2D" groups=["Plant"]]
+script = ExtResource("1_hs8nr")
+seed_grown_texture = ExtResource("2_nyfpe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -8
+texture = ExtResource("2_nyfpe")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_tyhil")
+
+[node name="GrowTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ReturnTimer" type="Timer" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu8rm6mlwdxn7"]
+[gd_scene load_steps=7 format=3 uid="uid://cu8rm6mlwdxn7"]
 
 [ext_resource type="Texture2D" uid="uid://f4io5xye5p1w" path="res://assets/art.png" id="1_8scug"]
+[ext_resource type="Script" path="res://scripts/tile_cursor.gd" id="1_d8dwy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wro8"]
 atlas = ExtResource("1_8scug")
@@ -24,10 +25,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_et8de"]
+size = Vector2(12, 12)
+
 [node name="TileCursor" type="Node2D"]
 z_index = -1
+script = ExtResource("1_d8dwy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ntpex")
 autoplay = "default"
 frame_progress = 0.614359
+
+[node name="SoilCheckArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SoilCheckArea"]
+shape = SubResource("RectangleShape2D_et8de")
+
+[node name="PlantCheckArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlantCheckArea"]
+shape = SubResource("RectangleShape2D_et8de")

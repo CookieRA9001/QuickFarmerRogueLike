@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1tjm2ds1kb3d"]
+
+[ext_resource type="PackedScene" uid="uid://cyfh0hsbv1uie" path="res://objects/plant.tscn" id="1_khtvy"]
+[ext_resource type="Texture2D" uid="uid://juikinxoeal5" path="res://assets/plant_potato.png" id="2_2ye6e"]
+
+[node name="Potato" instance=ExtResource("1_khtvy")]
+seed_tag = "potato"
+seed_grown_texture = ExtResource("2_2ye6e")
+grow_time = 3.0
+return_time = 1.5
